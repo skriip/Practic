@@ -5,8 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Practic"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Вход" Height="475" Width="823">
     <Grid>
-        
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF202F33" Offset="0"/>
+                <GradientStop Color="#FF9CE8FB" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button Content="Назад" HorizontalAlignment="Left" Margin="606,387,0,0" VerticalAlignment="Top"  Height="45" Width="185" Grid.IsSharedSizeScope="True" MinWidth="3" BorderBrush="#FF98E2F5" Background="#FF74ADBB" Foreground="Black" AutomationProperties.IsColumnHeader="True" IsDefault="True" FontSize="16" FontFamily="Verdana" FontWeight="Bold"/>
+        <Button Content="Вход" HorizontalAlignment="Left" Margin="324,387,0,0" VerticalAlignment="Top" Click="Button_Click_vxod" Height="46" Width="184" Grid.IsSharedSizeScope="True" MinWidth="3" BorderBrush="#FF98E2F5" Background="#FF74ADBB" Foreground="Black" AutomationProperties.IsColumnHeader="True" IsDefault="True" FontSize="16" FontFamily="Verdana" FontWeight="Bold"/>
+        <Label Content="Введите логин" HorizontalAlignment="Left" Margin="27,127,0,0" VerticalAlignment="Top" Width="182" Foreground="#FFE0DFDF" FontFamily="Verdana" FontSize="16" Height="28"/>
+        <Label Content="Выберете пароль" HorizontalAlignment="Left" Margin="27,202,0,0" VerticalAlignment="Top" Width="182" Foreground="#FFE0DFDF" FontFamily="Verdana" FontSize="16" Height="28"/>
+        <TextBox   x:Name="TextBoxLogo" HorizontalAlignment="Left" Margin="233,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" Height="44"/>
+        <TextBox  x:Name="TextBoxPasvord" HorizontalAlignment="Left" Margin="233,202,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" Height="44"/>
+
     </Grid>
+
 </Window>

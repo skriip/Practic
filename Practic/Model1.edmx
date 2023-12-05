@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище PolyclinicModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Otdels">
+          <Key>
+            <PropertyRef Name="id_Otdel" />
+          </Key>
+          <Property Name="id_Otdel" Type="int" Nullable="false" />
+          <Property Name="NameOtdel" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Record">
+          <Key>
+            <PropertyRef Name="id_Record" />
+          </Key>
+          <Property Name="id_Record" Type="int" Nullable="false" />
+          <Property Name="Familiy" Type="nvarchar(max)" />
+          <Property Name="Name" Type="nvarchar(max)" />
+          <Property Name="Otchestvo" Type="nvarchar(max)" />
+          <Property Name="Datero" Type="date" />
+          <Property Name="Pochta" Type="nvarchar(max)" />
+          <Property Name="Telefon" Type="int" />
+          <Property Name="id_Vrach" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="id_pocient" />
+          </Key>
+          <Property Name="id_pocient" Type="int" Nullable="false" />
+          <Property Name="Password" Type="nvarchar(max)" />
+          <Property Name="Login" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Vrach">
+          <Key>
+            <PropertyRef Name="id_Vrach" />
+          </Key>
+          <Property Name="id_Vrach" Type="int" Nullable="false" />
+          <Property Name="id_Otdels" Type="int" />
+          <Property Name="Fam" Type="nvarchar(max)" />
+          <Property Name="Nam" Type="nvarchar(max)" />
+          <Property Name="Ot" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK_Record_Vrach">
+          <End Role="Vrach" Type="Self.Vrach" Multiplicity="0..1" />
+          <End Role="Record" Type="Self.Record" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vrach">
+              <PropertyRef Name="id_Vrach" />
+            </Principal>
+            <Dependent Role="Record">
+              <PropertyRef Name="id_Vrach" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Vrach_Otdels">
+          <End Role="Otdels" Type="Self.Otdels" Multiplicity="0..1" />
+          <End Role="Vrach" Type="Self.Vrach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Otdels">
+              <PropertyRef Name="id_Otdel" />
+            </Principal>
+            <Dependent Role="Vrach">
+              <PropertyRef Name="id_Otdels" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище PolyclinicModelContainer">
+          <EntitySet Name="Otdels" EntityType="Self.Otdels" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Record" EntityType="Self.Record" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vrach" EntityType="Self.Vrach" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Record_Vrach" Association="Self.FK_Record_Vrach">
+            <End Role="Vrach" EntitySet="Vrach" />
+            <End Role="Record" EntitySet="Record" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Vrach_Otdels" Association="Self.FK_Vrach_Otdels">
+            <End Role="Otdels" EntitySet="Otdels" />
+            <End Role="Vrach" EntitySet="Vrach" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PolyclinicModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="id_pocient" />
+          </Key>
+          <Property Name="id_pocient" Type="Int32" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Login" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="PolyclinicEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <EntitySet Name="Otdels" EntityType="PolyclinicModel.Otdels" />
+          <EntitySet Name="Record" EntityType="PolyclinicModel.Record" />
+          <EntitySet Name="sysdiagrams" EntityType="PolyclinicModel.sysdiagrams" />
+          <EntitySet Name="Vrach" EntityType="PolyclinicModel.Vrach" />
+          <AssociationSet Name="FK_Vrach_Otdels" Association="PolyclinicModel.FK_Vrach_Otdels">
+            <End Role="Otdels" EntitySet="Otdels" />
+            <End Role="Vrach" EntitySet="Vrach" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Record_Vrach" Association="PolyclinicModel.FK_Record_Vrach">
+            <End Role="Vrach" EntitySet="Vrach" />
+            <End Role="Record" EntitySet="Record" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Otdels">
+          <Key>
+            <PropertyRef Name="id_Otdel" />
+          </Key>
+          <Property Name="id_Otdel" Type="Int32" Nullable="false" />
+          <Property Name="NameOtdel" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Vrach" Relationship="PolyclinicModel.FK_Vrach_Otdels" FromRole="Otdels" ToRole="Vrach" />
+        </EntityType>
+        <EntityType Name="Record">
+          <Key>
+            <PropertyRef Name="id_Record" />
+          </Key>
+          <Property Name="id_Record" Type="Int32" Nullable="false" />
+          <Property Name="Familiy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Otchestvo" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Datero" Type="DateTime" Precision="0" />
+          <Property Name="Pochta" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Telefon" Type="Int32" />
+          <Property Name="id_Vrach" Type="Int32" />
+          <NavigationProperty Name="Vrach" Relationship="PolyclinicModel.FK_Record_Vrach" FromRole="Record" ToRole="Vrach" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Vrach">
+          <Key>
+            <PropertyRef Name="id_Vrach" />
+          </Key>
+          <Property Name="id_Vrach" Type="Int32" Nullable="false" />
+          <Property Name="id_Otdels" Type="Int32" />
+          <NavigationProperty Name="Otdels" Relationship="PolyclinicModel.FK_Vrach_Otdels" FromRole="Vrach" ToRole="Otdels" />
+          <NavigationProperty Name="Record" Relationship="PolyclinicModel.FK_Record_Vrach" FromRole="Vrach" ToRole="Record" />
+          <Property Name="Fam" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Nam" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Ot" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_Vrach_Otdels">
+          <End Type="PolyclinicModel.Otdels" Role="Otdels" Multiplicity="0..1" />
+          <End Type="PolyclinicModel.Vrach" Role="Vrach" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Otdels">
+              <PropertyRef Name="id_Otdel" />
+            </Principal>
+            <Dependent Role="Vrach">
+              <PropertyRef Name="id_Otdels" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Record_Vrach">
+          <End Type="PolyclinicModel.Vrach" Role="Vrach" Multiplicity="0..1" />
+          <End Type="PolyclinicModel.Record" Role="Record" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vrach">
+              <PropertyRef Name="id_Vrach" />
+            </Principal>
+            <Dependent Role="Record">
+              <PropertyRef Name="id_Vrach" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище PolyclinicModelContainer" CdmEntityContainer="PolyclinicEntities">
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="PolyclinicModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="id_pocient" ColumnName="id_pocient" />
+                </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Otdels">
+            <EntityTypeMapping TypeName="PolyclinicModel.Otdels">
+              <MappingFragment StoreEntitySet="Otdels">
+                <ScalarProperty Name="NameOtdel" ColumnName="NameOtdel" />
+                <ScalarProperty Name="id_Otdel" ColumnName="id_Otdel" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Record">
+            <EntityTypeMapping TypeName="PolyclinicModel.Record">
+              <MappingFragment StoreEntitySet="Record">
+                <ScalarProperty Name="id_Vrach" ColumnName="id_Vrach" />
+                <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+                <ScalarProperty Name="Pochta" ColumnName="Pochta" />
+                <ScalarProperty Name="Datero" ColumnName="Datero" />
+                <ScalarProperty Name="Otchestvo" ColumnName="Otchestvo" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Familiy" ColumnName="Familiy" />
+                <ScalarProperty Name="id_Record" ColumnName="id_Record" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="PolyclinicModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vrach">
+            <EntityTypeMapping TypeName="PolyclinicModel.Vrach">
+              <MappingFragment StoreEntitySet="Vrach">
+                <ScalarProperty Name="Ot" ColumnName="Ot" />
+                <ScalarProperty Name="Nam" ColumnName="Nam" />
+                <ScalarProperty Name="Fam" ColumnName="Fam" />
+                <ScalarProperty Name="id_Otdels" ColumnName="id_Otdels" />
+                <ScalarProperty Name="id_Vrach" ColumnName="id_Vrach" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

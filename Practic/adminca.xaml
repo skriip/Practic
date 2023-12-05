@@ -1,0 +1,23 @@
+﻿<Window x:Class="Practic.adminca"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Practic"
+        mc:Ignorable="d"
+        Title="adminca"  Height="475" Width="823">
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF202F33" Offset="0"/>
+                <GradientStop Color="#FF9CE8FB" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Button Content="Редактор отделов" HorizontalAlignment="Center" Margin="0,260,0,0" VerticalAlignment="Top" Height="35" Width="294" FontFamily="Verdana" FontSize="14" FontWeight="Bold" Background="#FF6B9FAC" BorderBrush="#FF9AE6F8" />
+        <Button Content="Редактор врачей " HorizontalAlignment="Center" Margin="0,172,0,0" VerticalAlignment="Top" Width="294" Height="35" FontFamily="Verdana" FontSize="14" FontWeight="Bold" Background="#FF6B9FAC" BorderBrush="#FF9AE6F8" Click="Button_Click" />
+        <Label Content="Админ-панель" HorizontalAlignment="Center" Margin="0,81,0,0" VerticalAlignment="Top" Height="49" Width="208" FontFamily="Verdana" FontWeight="Bold" FontSize="24" Foreground="#FF9AE5F8"/>
+        <Button Content="Назад" HorizontalAlignment="Left" Margin="681,400,0,0" VerticalAlignment="Top" Height="31" Width="108" FontFamily="Verdana" FontSize="14" FontWeight="Bold" Background="#FF91D8EA" BorderBrush="#FF6394A0" Click="Button_Click_nazad"/>
+
+    </Grid>
+
+</Window>

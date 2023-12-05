@@ -24,5 +24,54 @@ namespace Practic
         {
             InitializeComponent();
         }
+
+        private void Button_Click_vxod(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                var CurrentUser = AppDate.db.Users.FirstOrDefault(u => u.Login == TextBoxLogo.Text && u.Password == TextBoxPasvord.Text);
+
+                /*  Users user = new Users()
+                  {
+                      Logo = TextBoxLogo.Text,
+                      Pasvord = TextBoxPasvord.Text,
+                  };
+                  AppDate.db.Users.Add(user);
+                  try
+                  {
+                      AppDate.db.SaveChanges();
+                      MessageBox.Show("хуй");
+                  }
+                  catch (Exception ex)
+                  {
+                      MessageBox.Show(ex.Message);
+                  }
+
+                 */
+
+                if (CurrentUser == null)
+                {
+                    MessageBox.Show("ошибка входа, повторите еще раз!");
+
+
+                    /* MessageBox.Show("Вы успешно зашли");
+                    var Adminca = new adminca();
+                    Adminca.Show();
+                    this.Close();*/
+                }
+                else
+                {
+                    MessageBox.Show("Вы успешно зашли");
+                    var Adminca = new adminca();
+                    Adminca.Show();
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            { 
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
-}
+    }
+
