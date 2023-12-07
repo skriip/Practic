@@ -13,7 +13,7 @@
                 <GradientStop Color="#FF9CE8FB" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Button Content="Редактор отделов" HorizontalAlignment="Center" Margin="0,260,0,0" VerticalAlignment="Top" Height="35" Width="294" FontFamily="Verdana" FontSize="14" FontWeight="Bold" Background="#FF6B9FAC" BorderBrush="#FF9AE6F8" />
+        <Button Content="Редактор отделов" HorizontalAlignment="Center" Margin="0,260,0,0" VerticalAlignment="Top" Height="35" Width="294" FontFamily="Verdana" FontSize="14" FontWeight="Bold" Background="#FF6B9FAC" BorderBrush="#FF9AE6F8" Click="Button_Click_1" />
         <Button Content="Редактор врачей " HorizontalAlignment="Center" Margin="0,172,0,0" VerticalAlignment="Top" Width="294" Height="35" FontFamily="Verdana" FontSize="14" FontWeight="Bold" Background="#FF6B9FAC" BorderBrush="#FF9AE6F8" Click="Button_Click" />
         <Label Content="Админ-панель" HorizontalAlignment="Center" Margin="0,81,0,0" VerticalAlignment="Top" Height="49" Width="208" FontFamily="Verdana" FontWeight="Bold" FontSize="24" Foreground="#FF9AE5F8"/>
         <Button Content="Назад" HorizontalAlignment="Left" Margin="681,400,0,0" VerticalAlignment="Top" Height="31" Width="108" FontFamily="Verdana" FontSize="14" FontWeight="Bold" Background="#FF91D8EA" BorderBrush="#FF6394A0" Click="Button_Click_nazad"/>

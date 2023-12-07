@@ -37,5 +37,12 @@ namespace Practic
             редактор.Show();
             this.Close();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var ot = new redOtdel();
+            ot.Show();
+            this.Close();
+        }
     }
 }
