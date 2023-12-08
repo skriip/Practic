@@ -20,6 +20,7 @@ namespace Practic
             : base("name=PolyclinicEntities")
         {
         }
+
         public static PolyclinicEntities GetContext()
         {
             if (_context == null)

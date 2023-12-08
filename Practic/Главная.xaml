@@ -13,5 +13,10 @@
                 <GradientStop Color="#FF9CE8FB" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
+        <Button Content="админ" HorizontalAlignment="Left" Margin="28,31,0,0" VerticalAlignment="Top" Height="32" Width="79" FontSize="16" Background="#FF30474D" Foreground="Black" FontFamily="Verdana" FontWeight="Bold" BorderBrush="#FF30474D" Click="Button_Click"/>
+        <Button Content="Записаться на прием" HorizontalAlignment="Left" Margin="477,360,0,0" VerticalAlignment="Top" Height="43" Width="236" FontSize="16" Background="#FF74ADBB" Foreground="Black" FontFamily="Verdana" FontWeight="Bold"/>
+        <ComboBox HorizontalAlignment="Left" Margin="207,113,0,0" VerticalAlignment="Top" Width="308" Height="35"/>
+        <DatePicker HorizontalAlignment="Left" Margin="207,0,0,0" VerticalAlignment="Center" Height="64" Width="220"/>
+        <Label Content="Выбор отделения" HorizontalAlignment="Left" Margin="207,82,0,0" VerticalAlignment="Top" Width="153"/>
     </Grid>
 </Window>

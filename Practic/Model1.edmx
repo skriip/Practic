@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="id_Otdel" />
           </Key>
-          <Property Name="id_Otdel" Type="int" Nullable="false" />
+          <Property Name="id_Otdel" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameOtdel" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Record">
