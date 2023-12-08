@@ -32,6 +32,35 @@ namespace Practic
             Admin.Show();
             this.Close();
         }
-       
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            //удаление
+            var VrachForRemoving = DGridVrach.SelectedItems.Cast<Vrach>().ToList();
+            if (MessageBox.Show($"Вы точно хотите удалить следующие данные{VrachForRemoving.Count()} элеиентов? ", "Внимание!",
+                MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    PolyclinicEntities.GetContext().Vrach.RemoveRange(VrachForRemoving);
+                    PolyclinicEntities.GetContext().SaveChanges();
+                    MessageBox.Show("Данные удалены!");
+                    DGridVrach.ItemsSource = PolyclinicEntities.GetContext().Vrach.ToList();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString()); ;
+                }
+            }
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var dobvr = new Dobav();
+            dobvr.Show();
+            this.Close();
+        }
     }
 }
+

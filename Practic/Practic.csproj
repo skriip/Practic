@@ -67,6 +67,7 @@
     <Compile Include="adminca.xaml.cs">
       <DependentUpon>adminca.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Dobav.xaml.cs" />
     <Compile Include="dobavlenieOtdel.xaml.cs">
       <DependentUpon>dobavlenieOtdel.xaml</DependentUpon>
     </Compile>
@@ -165,6 +166,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="Dobav.vrach">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
     <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </None>
