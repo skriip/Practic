@@ -57,7 +57,7 @@ namespace Practic
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var dobvr = new Dobav();
+            var dobvr = new DobavVrach();
             dobvr.Show();
             this.Close();
         }
