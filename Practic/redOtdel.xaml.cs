@@ -57,8 +57,14 @@ namespace Practic
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            var Redpodr = new dobavlenieOtdel(); 
+            var Redpodr = new dobavlenieOtdel(null); 
             Redpodr.Show(); 
+            this.Close();
+        }
+        private void BnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            var dobo = new dobavlenieOtdel ((sender as Button).DataContext as Otdels);
+            dobo.Show();
             this.Close();
         }
     }

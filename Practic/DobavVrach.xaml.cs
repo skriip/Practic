@@ -20,11 +20,16 @@ namespace Practic
     public partial class DobavVrach : Window
     {
         private Vrach _pogr = new Vrach();
-        public DobavVrach()
+        public DobavVrach(Vrach selectedVrach)
         {
             InitializeComponent();
+
+            if (selectedVrach != null)
+            {
+                _pogr = selectedVrach;
+            }
             DataContext = _pogr;
-            ComboBoxOtdel.ItemsSource = PolyclinicEntities.GetContext().Otdels.ToList();
+            ComboBox1.ItemsSource = PolyclinicEntities.GetContext().Otdels.ToList();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -37,7 +42,7 @@ namespace Practic
                 errors.AppendLine("Укажите фамилию врача");
             if (string.IsNullOrWhiteSpace(Ott.Text))
                 errors.AppendLine("Укажите отчество врача");
-            if (ComboBoxOtdel.SelectedItem == null)
+            if (ComboBox1.SelectedItem == null)
                 errors.AppendLine("Укажите отдел");
 
             if (errors.Length > 0)
@@ -67,5 +72,7 @@ namespace Practic
             RedDo.Show(); 
             this.Close(); 
         }
+
+        
     }
     }

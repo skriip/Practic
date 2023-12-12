@@ -20,9 +20,14 @@ namespace Practic
     public partial class dobavlenieOtdel : Window
     {
         private Otdels _pogr = new Otdels();
-        public dobavlenieOtdel()
+        public dobavlenieOtdel(Otdels selectedOtdel)
         {
             InitializeComponent();
+
+            if (selectedOtdel != null)
+            {
+                _pogr = selectedOtdel;
+            }
             DataContext = _pogr;
         }
 

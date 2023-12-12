@@ -57,10 +57,28 @@ namespace Practic
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var dobvr = new DobavVrach();
+            var dobvr = new DobavVrach(null);
             dobvr.Show();
             this.Close();
         }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var adm = new adminca();
+            adm.Show();
+            this.Close();
+        }
+
+        private void BtnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            var dobvr = new DobavVrach((sender as Button).DataContext as Vrach );
+            dobvr.Show();
+            this.Close();
+        }
+        
+
+
     }
+
 }
 

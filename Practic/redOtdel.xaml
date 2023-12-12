@@ -18,6 +18,13 @@
             <DataGrid x:Name="DGridOtdel" AutoGenerateColumns="False" IsReadOnly="True" Margin="0,0,0,33" >
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Название подраздилений" Binding="{Binding NameOtdel }" Width="*"></DataGridTextColumn>
+                    <DataGridTemplateColumn Width="auto">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Редактировать" Name="BtnEdit" Click="BnEdit_Click" ></Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
 

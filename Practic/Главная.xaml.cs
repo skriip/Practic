@@ -26,7 +26,7 @@ namespace Practic
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            var adm = new adminca ();
+            var adm = new MainWindow ();
             adm.Show();
             this.Close();
 
