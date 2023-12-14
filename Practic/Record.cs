@@ -18,11 +18,12 @@ namespace Practic
         public string Familiy { get; set; }
         public string Name { get; set; }
         public string Otchestvo { get; set; }
-        public Nullable<System.DateTime> Datero { get; set; }
+        public Nullable<int> Datero { get; set; }
         public string Pochta { get; set; }
         public Nullable<int> Telefon { get; set; }
-        public Nullable<int> id_Vrach { get; set; }
+        public Nullable<int> id_Otdels { get; set; }
+        public Nullable<System.DateTime> dataTime { get; set; }
     
-        public virtual Vrach Vrach { get; set; }
+        public virtual Otdels Otdels { get; set; }
     }
 }

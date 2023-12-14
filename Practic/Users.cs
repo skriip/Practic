@@ -17,5 +17,8 @@ namespace Practic
         public int id_pocient { get; set; }
         public string Password { get; set; }
         public string Login { get; set; }
+        public Nullable<int> id_roll { get; set; }
+    
+        public virtual rols rols { get; set; }
     }
 }

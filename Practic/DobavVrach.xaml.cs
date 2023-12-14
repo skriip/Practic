@@ -29,7 +29,7 @@ namespace Practic
                 _pogr = selectedVrach;
             }
             DataContext = _pogr;
-            ComboBox1.ItemsSource = PolyclinicEntities.GetContext().Otdels.ToList();
+            ComboBox1.ItemsSource = PolyclinicEntities1.GetContext().Otdels.ToList();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
@@ -52,11 +52,11 @@ namespace Practic
             }
 
             if (_pogr.id_Vrach == 0)
-                PolyclinicEntities.GetContext().Vrach.Add(_pogr);
+                PolyclinicEntities1.GetContext().Vrach.Add(_pogr);
 
             try
             {
-                PolyclinicEntities.GetContext().SaveChanges();
+                PolyclinicEntities1.GetContext().SaveChanges();
                 MessageBox.Show("Информация сохранена");
 
             }

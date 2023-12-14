@@ -22,7 +22,7 @@ namespace Practic
         public redOtdel()
         {
             InitializeComponent();
-            DGridOtdel.ItemsSource = PolyclinicEntities.GetContext(). Otdels.ToList();
+            DGridOtdel.ItemsSource = PolyclinicEntities1.GetContext(). Otdels.ToList();
         }
 
 
@@ -42,10 +42,10 @@ namespace Practic
             {
                 try
                 {
-                    PolyclinicEntities.GetContext().Otdels.RemoveRange(otdForRemoving);
-                    PolyclinicEntities.GetContext().SaveChanges();
+                    PolyclinicEntities1.GetContext().Otdels.RemoveRange(otdForRemoving);
+                    PolyclinicEntities1.GetContext().SaveChanges();
                     MessageBox.Show("Данные удалены!");
-                    DGridOtdel.ItemsSource = PolyclinicEntities.GetContext().Otdels.ToList();
+                    DGridOtdel.ItemsSource = PolyclinicEntities1.GetContext().Otdels.ToList();
                 }
                 catch (Exception ex)
                 {

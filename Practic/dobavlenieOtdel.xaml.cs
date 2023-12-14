@@ -45,11 +45,11 @@ namespace Practic
             }
 
             if (_pogr.id_Otdel == 0)
-                PolyclinicEntities.GetContext().Otdels.Add(_pogr);
+                PolyclinicEntities1.GetContext().Otdels.Add(_pogr);
 
             try
             {
-                PolyclinicEntities.GetContext().SaveChanges();
+                PolyclinicEntities1.GetContext().SaveChanges();
                 MessageBox.Show("Информация сохранена");
 
             }

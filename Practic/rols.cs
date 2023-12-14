@@ -12,21 +12,18 @@ namespace Practic
     using System;
     using System.Collections.Generic;
     
-    public partial class Otdels
+    public partial class rols
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Otdels()
+        public rols()
         {
-            this.Vrach = new HashSet<Vrach>();
-            this.Record = new HashSet<Record>();
+            this.Users = new HashSet<Users>();
         }
     
-        public int id_Otdel { get; set; }
-        public string NameOtdel { get; set; }
+        public int id_roll { get; set; }
+        public string roll { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Vrach> Vrach { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Record> Record { get; set; }
+        public virtual ICollection<Users> Users { get; set; }
     }
 }

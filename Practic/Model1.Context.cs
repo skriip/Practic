@@ -13,32 +13,31 @@ namespace Practic
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class PolyclinicEntities : DbContext
+    public partial class PolyclinicEntities1 : DbContext
     {
-        private static PolyclinicEntities _context;
-        public PolyclinicEntities()
-            : base("name=PolyclinicEntities")
+        private static PolyclinicEntities1 _context;
+        public PolyclinicEntities1()
+            : base("name=PolyclinicEntities1")
         {
         }
-
-        public static PolyclinicEntities GetContext()
+        public static PolyclinicEntities1 GetContext()
         {
             if (_context == null)
             {
-                _context = new PolyclinicEntities();
+                _context = new PolyclinicEntities1();
             }
             return _context;
         }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<Otdels> Otdels { get; set; }
-        public virtual DbSet<Record> Record { get; set; }
+        public virtual DbSet<rols> rols { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Users> Users { get; set; }
         public virtual DbSet<Vrach> Vrach { get; set; }
+        public virtual DbSet<Record> Record { get; set; }
     }
 }

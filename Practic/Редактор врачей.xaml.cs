@@ -22,7 +22,7 @@ namespace Practic
         public Редактор_врачей()
         {
             InitializeComponent();
-            DGridVrach.ItemsSource = PolyclinicEntities.GetContext().Vrach.ToList();
+            DGridVrach.ItemsSource = PolyclinicEntities1.GetContext().Vrach.ToList();
             
         }
 
@@ -42,10 +42,10 @@ namespace Practic
             {
                 try
                 {
-                    PolyclinicEntities.GetContext().Vrach.RemoveRange(VrachForRemoving);
-                    PolyclinicEntities.GetContext().SaveChanges();
+                    PolyclinicEntities1.GetContext().Vrach.RemoveRange(VrachForRemoving);
+                    PolyclinicEntities1.GetContext().SaveChanges();
                     MessageBox.Show("Данные удалены!");
-                    DGridVrach.ItemsSource = PolyclinicEntities.GetContext().Vrach.ToList();
+                    DGridVrach.ItemsSource = PolyclinicEntities1.GetContext().Vrach.ToList();
                 }
                 catch (Exception ex)
                 {

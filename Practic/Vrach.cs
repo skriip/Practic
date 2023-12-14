@@ -14,12 +14,6 @@ namespace Practic
     
     public partial class Vrach
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Vrach()
-        {
-            this.Record = new HashSet<Record>();
-        }
-    
         public int id_Vrach { get; set; }
         public Nullable<int> id_Otdels { get; set; }
         public string Fam { get; set; }
@@ -27,7 +21,5 @@ namespace Practic
         public string Ot { get; set; }
     
         public virtual Otdels Otdels { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Record> Record { get; set; }
     }
 }

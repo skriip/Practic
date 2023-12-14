@@ -4,14 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="bc0ba37b80b7429daa84a1ef35ff42b1" Name="Diagram1">
-        <EntityTypeShape EntityType="PolyclinicModel.Users" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="PolyclinicModel.Otdels" Width="1.5" PointX="3.5" PointY="1" />
-        <EntityTypeShape EntityType="PolyclinicModel.Record" Width="1.5" PointX="8" PointY="0.5" />
-        <EntityTypeShape EntityType="PolyclinicModel.sysdiagrams" Width="1.5" PointX="0.5" PointY="3.25" />
-        <EntityTypeShape EntityType="PolyclinicModel.Vrach" Width="1.5" PointX="5.75" PointY="0.625" />
-        <AssociationConnector Association="PolyclinicModel.FK_Vrach_Otdels" />
-        <AssociationConnector Association="PolyclinicModel.FK_Record_Vrach" />
+      <Diagram DiagramId="44627818f4d04305a922e7d15c82f932" Name="Diagram1">
+        <EntityTypeShape EntityType="PolyclinicModel.Otdels" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PolyclinicModel.rols" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PolyclinicModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PolyclinicModel.Users" Width="1.5" PointX="8" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PolyclinicModel.Vrach" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <AssociationConnector Association="PolyclinicModel.FK_Vrach_Otdels" ManuallyRouted="false" />
+        <AssociationConnector Association="PolyclinicModel.FK_Users_rols" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PolyclinicModel.Record" Width="1.5" PointX="3" PointY="0.75" />
+        <AssociationConnector Association="PolyclinicModel.FK_Record_Otdels" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

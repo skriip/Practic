@@ -3,20 +3,40 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Practic"
+        xmlns:local="clr-namespace:Practic" xmlns:toolkit="http://schemas.microsoft.com/netfx/2009/xaml/presentation"
         mc:Ignorable="d"
-        Title="Главная" Height="450" Width="800">
-    <Grid>
+        Title="Главная" Height="581" Width="861">
+    <Grid Margin="0,0,0,-6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="385*"/>
+            <RowDefinition Height="163*"/>
+        </Grid.RowDefinitions>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                 <GradientStop Color="#FF202F33" Offset="0"/>
                 <GradientStop Color="#FF9CE8FB" Offset="1"/>
             </LinearGradientBrush>
         </Grid.Background>
-        <Button Content="админ" HorizontalAlignment="Left" Margin="28,31,0,0" VerticalAlignment="Top" Height="32" Width="79" FontSize="16" Background="#FF30474D" Foreground="Black" FontFamily="Verdana" FontWeight="Bold" BorderBrush="#FF30474D" Click="Button_Click"/>
-        <Button Content="Записаться на прием" HorizontalAlignment="Left" Margin="477,360,0,0" VerticalAlignment="Top" Height="43" Width="236" FontSize="16" Background="#FF74ADBB" Foreground="Black" FontFamily="Verdana" FontWeight="Bold"/>
-        <ComboBox HorizontalAlignment="Left" Margin="207,113,0,0" VerticalAlignment="Top" Width="308" Height="35"/>
-        <DatePicker HorizontalAlignment="Left" Margin="207,0,0,0" VerticalAlignment="Center" Height="64" Width="220"/>
-        <Label Content="Выбор отделения" HorizontalAlignment="Left" Margin="207,82,0,0" VerticalAlignment="Top" Width="153"/>
+        <Button Content="админ" HorizontalAlignment="Left" Margin="721,21,0,0" VerticalAlignment="Top" Height="29" Width="73" FontSize="16" Background="#FF30474D" Foreground="Black" FontFamily="Verdana" FontWeight="Bold" BorderBrush="#FF30474D" Click="Button_Click"/>
+        <Button Content="Записаться на прием" HorizontalAlignment="Left" Margin="562,70,0,0" VerticalAlignment="Top" Height="43" Width="236" FontSize="16" Background="#FF74ADBB" Foreground="Black" FontFamily="Verdana" FontWeight="Bold" Click="Button_Click_1" Grid.Row="1"/>
+        <ComboBox  x:Name="ComboBox1" Text="{Binding Otdels}"  DisplayMemberPath="NameOtdel" Margin="452,100,103,253"  />
+        <DatePicker x:Name="datePicker" Text="{Binding dataTime}"  HorizontalAlignment="Left" Margin="452,181,0,0" VerticalAlignment="Top" Height="64" Width="220"/>
+        <Label Content="Выбор отделения" HorizontalAlignment="Left" Margin="452,69,0,0" VerticalAlignment="Top" Width="153" Height="26"/>
+        <TextBox  x:Name="teli" Text= "{Binding Telefon}" HorizontalAlignment="Left" Margin="46,371,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" Height="39" Grid.RowSpan="2"/>
+        <Label Content="Введите данные поциента" HorizontalAlignment="Left" Margin="46,15,0,0" VerticalAlignment="Top" Width="231" Foreground="#FFFAF9F9" Height="41" FontWeight="Bold" FontSize="14"/>
+        <TextBox x:Name="dr" Text= "{Binding Datero}" HorizontalAlignment="Left" Margin="46,296,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" Height="39"/>
+        <TextBox x:Name="Fami" Text= "{Binding Familiy}"  HorizontalAlignment="Left" Margin="46,232,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" Height="39" />
+        <TextBox x:Name="Oti" Text= "{Binding Otchestvo}"  HorizontalAlignment="Left" Margin="46,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" Height="39"/>
+        <TextBox x:Name="Nam" Text= "{Binding Name}" HorizontalAlignment="Left" Margin="46,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" Height="39"/>
+        <Label Content="Введите имя" HorizontalAlignment="Left" Margin="46,56,0,0" VerticalAlignment="Top" Width="153" Height="26"/>
+        <Label Content="Введите номер " HorizontalAlignment="Left" Margin="46,340,0,0" VerticalAlignment="Top" Width="153" Height="26"/>
+        <Label Content="Введите Отчество" HorizontalAlignment="Left" Margin="46,135,0,0" VerticalAlignment="Top" Width="153" Height="26"/>
+        <Label Content="Введите фамилию" HorizontalAlignment="Left" Margin="46,206,0,0" VerticalAlignment="Top" Width="153" Height="26"/>
+        <Label Content="Введите дату рождения без пробелов и точек" HorizontalAlignment="Left" Margin="40,273,0,0" VerticalAlignment="Top" Width="270" Height="26"/>
+        <Label Content="Введите почту" HorizontalAlignment="Left" Margin="46,36,0,0" VerticalAlignment="Top" Width="153" Grid.Row="1" Height="26"/>
+        <TextBox x:Name="Poch" Text="{Binding Pochta}" HorizontalAlignment="Left" Margin="46,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="258" Height="40" Grid.Row="1" />
+        <ComboBox  x:Name="cbTime" Text="{Binding dataTime}"   HorizontalAlignment="Left" Margin="452,316,0,0" VerticalAlignment="Top" Width="308" Height="36"/>
+        <Label Content="Выбор время" HorizontalAlignment="Left" Margin="452,286,0,0" VerticalAlignment="Top" Width="153" Height="26"/>
+
     </Grid>
 </Window>

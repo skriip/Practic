@@ -8,7 +8,7 @@ namespace Practic
 {
     internal class AppDate
     {
-        public static PolyclinicEntities db = new PolyclinicEntities();
+        public static PolyclinicEntities1 db = new PolyclinicEntities1();
         /*public static DbSet*/
     }
 }
