@@ -44,5 +44,12 @@ namespace Practic
             ot.Show();
             this.Close();
         }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            var v = new redZayvc();
+            v.Show();
+            this.Close();
+        }
     }
 }

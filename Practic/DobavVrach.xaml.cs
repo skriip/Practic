@@ -19,7 +19,7 @@ namespace Practic
     /// </summary>
     public partial class DobavVrach : Window
     {
-        private Vrach _pogr = new Vrach();
+        public Vrach _pogr = new Vrach();
         public DobavVrach(Vrach selectedVrach)
         {
             InitializeComponent();
@@ -32,7 +32,11 @@ namespace Practic
             ComboBox1.ItemsSource = PolyclinicEntities1.GetContext().Otdels.ToList();
         }
 
-        private void Button_Click_2(object sender, RoutedEventArgs e)
+        public DobavVrach()
+        {
+        }
+
+        public void Button_Click_2(object sender, RoutedEventArgs e)
         {
             //добавление
             StringBuilder errors = new StringBuilder();
@@ -66,7 +70,7 @@ namespace Practic
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public void Button_Click(object sender, RoutedEventArgs e)
         {
             var RedDo = new Редактор_врачей(); 
             RedDo.Show(); 
